@@ -56,8 +56,8 @@ Building on this insight, we propose <b>$\rho$-$\texttt{EOS}$</b>, a training-fr
 
 
 ## 📢 News
-- [2025/02/07] We released our code!
-- [2025/01/30] We released our [paper](https://arxiv.org/abs/2601.22527) on arXiv!
+- [2026/02/07] We released our code!
+- [2026/01/30] We released our [paper](https://arxiv.org/abs/2601.22527) on arXiv!
 
 
 ## 💻 Overview
