@@ -18,7 +18,7 @@
 <br>
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv:2501.22527-red)](https://arxiv.org/abs/2501.22527)
+[![Paper](https://img.shields.io/badge/Paper-arXiv:2601.22527-red)](https://arxiv.org/abs/2601.22527)
 <img src="https://img.shields.io/badge/License-Apache_2.0-green.svg" alt="License">
 <img src="https://visitor-badge.laobi.icu/badge?page_id=yjyddq.rho-EOS" />
 <img src="https://img.shields.io/github/stars/yjyddq/rho-EOS?style=flat-square&logo=github" alt="Stars">
@@ -57,7 +57,7 @@ Building on this insight, we propose <b>$\rho$-$\texttt{EOS}$</b>, a training-fr
 
 ## 📢 News
 - [2025/02/07] We released our code!
-- [2025/01/30] We released our [paper](https://arxiv.org/abs/2501.22527) on arXiv!
+- [2025/01/30] We released our [paper](https://arxiv.org/abs/2601.22527) on arXiv!
 
 
 ## 💻 Overview
