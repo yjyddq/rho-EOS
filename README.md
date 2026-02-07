@@ -1,10 +1,10 @@
 <div align="center">
 
 <p align="center">
-  <img src="assets/rho-EOS-logo.png" height=150>
+  <img src="assets/rho-EOS-logo.png" height=120>
 </p>
 
-<h1><b>⍴-EOS</b>: Training-free Bidirectional Variable-Length Control<br>for Masked Diffusion LLMs</h1>
+<h1><b>⍴-EOS</b>: Training-free Bidirectional Variable-Length<br>Control for Masked Diffusion LLMs</h1>
 
 <div>
     <a href="https://yjyddq.github.io/" target="_blank">Jingyi Yang</a><sup>1,2</sup> |
@@ -30,7 +30,7 @@
 ---
 
 
-<strong>💡 <b>⍴-EOS</b> is a `training-free` and `single-stage` strategy for `bidirectional` `variable-length control` via implicit EOS density (⍴) that unlocks dynamic and variable-length generation for dLLMs, achieving performance comparable to, and sometimes superior to, meticulously tuned fixed-length baselines.</strong>
+<strong>💡 <b>⍴-EOS</b> is a `training-free` and `single-stage` strategy for `bidirectional` `variable-length` control via implicit EOS density (⍴) that unlocks dynamic and variable-length generation for Masked dLLMs (e.g., LLaDA), achieving performance comparable to, and sometimes superior to, meticulously tuned fixed-length baselines.</strong>
 
 <details><summary><strong>📖 Click for the full abstract of <b>⍴-EOS</b></strong></summary>
 
@@ -56,7 +56,7 @@ Building on this insight, we propose <b>$\rho$-$\texttt{EOS}$</b>, a training-fr
 
 
 ## 📢 News
-- [2025/02/02] We released our code!
+- [2025/02/07] We released our code!
 - [2025/01/30] We released our [paper](https://arxiv.org/abs/2501.22527) on arXiv!
 
 
