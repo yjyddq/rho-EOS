@@ -268,8 +268,23 @@ def _adjust_length_by_eos_density(
             new_x[i, :new_total_len] = x[i, :new_total_len]
         elif action[i].item() == 2:  # Expand
             new_total_len = prompt_length + new_gen_lengths[i].item()
-            new_x[i, :original_total_len] = x[i, :original_total_len]
-            new_x[i, original_total_len:new_total_len] = mask_id
+            K_i = new_gen_lengths[i].item() - gen_lengths[i].item()
+
+            # Find first explicit EOS in generation region
+            gen_region = x[i, prompt_length:original_total_len]
+            eos_positions = (gen_region == eos_token_id).nonzero(as_tuple=True)[0]
+
+            if eos_positions.numel() > 0:
+                # Insert new MASKs before the first EOS
+                insert_pos = prompt_length + eos_positions[0].item()
+                new_x[i, :insert_pos] = x[i, :insert_pos]
+                new_x[i, insert_pos:insert_pos + K_i] = mask_id
+                remaining = original_total_len - insert_pos
+                new_x[i, insert_pos + K_i:insert_pos + K_i + remaining] = x[i, insert_pos:original_total_len]
+            else:
+                # No EOS found, append at end
+                new_x[i, :original_total_len] = x[i, :original_total_len]
+                new_x[i, original_total_len:new_total_len] = mask_id
 
     return new_x, new_gen_lengths, action
 
@@ -463,12 +478,10 @@ def generate(
                         break
 
             # Compute EOS density and adjust length
-            density, first_eos_pos = _calculate_eos_confidence(
+            density, eos_cnt, non_eos_cnt, first_eos_pos = _calculate_eos_density(
                 logits=logits,
-                total_lengths=total_lengths,
-                prompt_length=prompt_length,
+                currently_masked=currently_masked,
                 eos_token_id=eos_token_id,
-                eos_check_tokens=eos_check_tokens
             )
 
             # In denoise-only mode, clamp density to keep range
